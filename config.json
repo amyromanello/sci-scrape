@@ -1,0 +1,43 @@
+{
+  "user_name": ["Amy"],
+  "user_email": "amy.romanello@charite.de",
+  "global_keywords": ["postdoc", "research fellow", "wissenschafliche*r itarbeiter*in"],
+  "sites": [
+    {
+      "name": "MPG Jobboard",
+      "base_url": "https://www.mpg.de/jobboard",
+      "keywords": ["cognitive"],
+      "type": ["institutional_jobboard"]
+    },
+
+    {
+      "name": "Charite Stellenangebote",
+      "base_url": "https://karriere.charite.de/stellenangebote",
+      "keywords": ["cognitive"],
+      "type": ["institutional_jobboard"]
+    },
+
+    {
+      "name": "FU Jobs Scientific",
+      "base_url": "https://www.fu-berlin.de/universitaet/beruf-karriere/jobs/wiss/index.html",
+      "keywords": ["cognitive"],
+      "type": ["institutional_jobboard"]
+    },
+
+    {
+      "name": "HU Jobs Scientific",
+      "base_url": "https://haushalt-und-personal.hu-berlin.de/de/personal/stellenausschreibungen",
+      "keywords": ["cognitive"],
+      "type": ["institutional_jobboard"]
+    },
+
+    {
+      "name": "TU Jobs",
+      "base_url": "https://www.jobs.tu-berlin.de/stellenausschreibungen",
+      "keywords": ["cognitive"],
+      "type": ["institutional_jobboard"]
+    }
+
+
+  ]
+}
