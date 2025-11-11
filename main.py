@@ -1,4 +1,4 @@
-from parser import fetch_initial_jobs, fetch_more_jobs, get_jobboard_id
+from parser_mpi import fetch_initial_jobs, fetch_more_jobs, get_jobboard_id
 from email_template import render_jobs_email
 from emailer import send_email
 import requests
