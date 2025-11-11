@@ -104,46 +104,47 @@ def fetch_more_jobs(session, base_api, start_offset=5, limit=5):
 
     return more_jobs
 
-class Job:
-    url: str
-    money: float
-    initial_post_time: datetime.datetime
+# class Job:
+#     url: str
+#     money: float
+#     initial_post_time: datetime.datetime
+#
+# class FindJobs(Protocol):
+#     def find_jobs(self, session: str, url: str):
+#         ...
+#
+# class Parser1(FindJobs):
+#     def find_jobs(self, session: str, url: str):
+#         soup = BeautifulSoup(response.text, 'html.parser')
+#
+# class Parser2(FindJobs):
+#      def find_jobs(self, session: str, url: str):
+#          ...
+# sites = {
+#     "site-one": Parser1,
+#     "site-two": Parser2,
+# }
+#
+# class FilterJobs(Protocol):
+#     def filter_jobs(self, job: list[Job]) -> list[Job]:
+#         ...
+#
+# class FilterByTime(FilterJobs):
+#     def filter_jobs(self, job: list[Job]) -> list[Job]:
+#         return [job if job.initial_post_time < datetime.datetime.now()]
+#
+# class FilterByKeyword(FilterJobs):
+#     def filter_jobs(self, job: list[Job]) -> list[Job]:
+#         return [j for j in jobs if j.url == "a"]
+#
+# def funt(test):
+#     ...
+#
+# funt(FilterJobs.filter_jobs())
 
-class FindJobs(Protocol):
-    def find_jobs(self, session: str, url: str):
-        ...
-
-class Parser1(FindJobs):
-    def find_jobs(self, session: str, url: str):
-        soup = BeautifulSoup(response.text, 'html.parser')
-
-class Parser2(FindJobs):
-     def find_jobs(self, session: str, url: str):
-         ...
-sites = {
-    "site-one": Parser1,
-    "site-two": Parser2,
-}
-
-class FilterJobs(Protocol):
-    def filter_jobs(self, job: list[Job]) -> list[Job]:
-        ...
-
-class FilterByTime(FilterJobs):
-    def filter_jobs(self, job: list[Job]) -> list[Job]:
-        return [job if job.initial_post_time < datetime.datetime.now()]
-
-class FilterByKeyword(FilterJobs):
-    def filter_jobs(self, job: list[Job]) -> list[Job]:
-        return [j for j in jobs if j.url == "a"]
-
-def funt(test):
-    ...
-
-funt(FilterJobs.filter_jobs())
 def main():
     session = requests.Session()
-    list_id = get_jobboard_id(session: s MAIN_URL)
+    list_id = get_jobboard_id(session, MAIN_URL)
     base_api = f"https://www.mpg.de/jobboard/{list_id}/more_items"
 
     # fetch initial jobs
@@ -159,13 +160,13 @@ def main():
 if __name__ == "__main__":
     main()
 
-    sites = ["site-one"]
-    jobs = []
-    for site in sites:
-         parser = sites.get(site)
-         jobs += parser.find_jobs("test", f"{MAIN_URL}/{site}")
-    filter = get_filter()
-    filter.filter_jobs(jobs)
+    # sites = ["site-one"]
+    # jobs = []
+    # for site in sites:
+    #      parser = sites.get(site)
+    #      jobs += parser.find_jobs("test", f"{MAIN_URL}/{site}")
+    # filter = get_filter()
+    # filter.filter_jobs(jobs)
 
 
 

@@ -1,4 +1,5 @@
-from parser_mpi import fetch_initial_jobs, fetch_more_jobs, get_jobboard_id
+#from parser_mpi import fetch_initial_jobs, fetch_more_jobs, get_jobboard_id
+from parser_hu import fetch_jobs
 from email_template import render_jobs_email
 from emailer import send_email
 import requests
@@ -13,19 +14,25 @@ def main():
     with open("config.json") as f:
         config = json.load(f)
 
-    # test for site 1
-    test_site = config["sites"][0]
+    test_site = config["sites"][3] #HU = 3, MPI = 0
     session = requests.Session()
-    list_id = get_jobboard_id(session, test_site["base_url"])
-    base_api = f"https://www.mpg.de/jobboard/{list_id}/more_items"
 
-    # fetch initial jobs
-    initial_jobs = fetch_initial_jobs(session, test_site["base_url"])
+    #### HU ####
+    # fetch all jobs (Static site)
+    all_jobs = fetch_jobs(session, test_site["base_url"])
+    ##############
 
-    # fetch more jobs
-    more_jobs = fetch_more_jobs(session, base_api, start_offset=len(initial_jobs), limit=5)
-    all_jobs = initial_jobs + more_jobs
-    print(f"Found {len(all_jobs)} jobs")
+    #### MPI ####
+    #list_id = get_jobboard_id(session, test_site["base_url"])
+    #base_api = f"https://www.mpg.de/jobboard/{list_id}/more_items"
+    # # fetch initial jobs
+    # initial_jobs = fetch_initial_jobs(session, test_site["base_url"])
+    #
+    # # fetch more jobs
+    # more_jobs = fetch_more_jobs(session, base_api, start_offset=len(initial_jobs), limit=5)
+    # all_jobs = initial_jobs + more_jobs
+    # print(f"Found {len(all_jobs)} jobs")
+    ############
 
     # Render HTML email
     html_content = render_jobs_email(config["user_name"][0], all_jobs)
