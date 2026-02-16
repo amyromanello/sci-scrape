@@ -13,7 +13,8 @@ Finding research positions, especially postdoc jobs relevant to your field, is a
 
 ## Features
 
-*   **Automated Scraping**: currently supports parsing for Humboldt University (HU) and Max Planck Institute (MPI) job boards.
+*   **Automated Scraping**: currently supports parsing for Humboldt University (HU) and Max Planck Institute (MPI) job boards. 
+            (At least, it did in late-2025. The HU job board has recently gotten a significant overhaul, so no guarantees there!)
 *   **Email Notifications**: Sends a daily summary of new job postings using SMTP.
 *   **Configurable**: Easily add new sites or change user details via `config.json`.
 *   **HTML Templates**: Uses Jinja2 to render beautiful email reports.
