@@ -1,10 +1,11 @@
-# SciScrape 🚀
+# SciScrape
 
 **SciScrape** is a work-in-progress Python tool designed to scrape scientific job postings from various institutional job boards and deliver a daily digest directly to your inbox.
 
 ##  Description
 
-Finding academic and research positions can be tedious, often requiring you to visit multiple university and institute websites daily. SciScrape automates this process by:
+Finding research positions, especially postdoc jobs relevant to your field, is a tedious process. I spent many hours cycling through the job boards on several university and institute websites during my own job search. As a fun side-project, I decided to create a tool to automate some of this, while also building familiarity with web scraping and deepening my Python skills.  
+"SciScrape" was made to help with:
 1.  Fetching job listings from configured institutional websites (e.g., Humboldt University, Max Planck Institute).
 2.  Filtering and parsing the job data.
 3.  Generating a clean, HTML-formatted email digest.
